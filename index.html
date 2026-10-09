@@ -38,7 +38,7 @@
             </div>
           </div>
 
-          <textarea id="relatorioBruto" rows="9" placeholder="Cole aqui o texto da monitoria contendo Realizada, Operador(a), AQM, Monitoria, Registro de Atendimento, Observação(ões), Ocorrência(s), etc."></textarea>
+          <textarea id="relatorioBruto" rows="9" placeholder="Cole aqui o texto da monitoria..."></textarea>
 
           <div class="acoes">
             <button id="processar" class="botao principal" type="button">⚡ Processar dados</button>
@@ -61,13 +61,58 @@
             </label>
 
             <label>
-              Data/hora atendimento
+              Operação
+              <input id="operacao" type="text" />
+            </label>
+
+            <label>
+              Data e horário da ligação
               <input id="dataAtendimento" type="datetime-local" />
+            </label>
+
+            <label>
+              ID
+              <input id="idAtendimento" type="text" />
+            </label>
+
+            <label>
+              UC
+              <input id="uc" type="text" />
+            </label>
+
+            <label>
+              TMA
+              <input id="tma" type="text" />
             </label>
 
             <label>
               Protocolo
               <input id="protocolo" type="text" />
+            </label>
+
+            <label class="largura-total">
+              Assunto
+              <input id="assunto" type="text" />
+            </label>
+
+            <label class="largura-total">
+              Descrição do atendimento
+              <textarea id="atendimento" rows="4"></textarea>
+            </label>
+
+            <label class="largura-total">
+              Pontos positivos
+              <textarea id="pontosPositivos" rows="3"></textarea>
+            </label>
+
+            <label class="largura-total">
+              Pontos a desenvolver
+              <textarea id="pontosDesenvolver" rows="3"></textarea>
+            </label>
+
+            <label class="largura-total">
+              Falha crítica
+              <textarea id="falhaCritica" rows="3">Não se aplica.</textarea>
             </label>
 
             <label>
@@ -83,11 +128,6 @@
             <label class="largura-total">
               M.O.
               <input id="mo" type="text" />
-            </label>
-
-            <label class="largura-total">
-              Atendimento / solicitação
-              <textarea id="atendimento" rows="4"></textarea>
             </label>
 
             <label class="largura-total">
