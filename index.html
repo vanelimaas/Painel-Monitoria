@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Monitoria e Reorientação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>📋 Painel de Monitoria & Reorientação</h1>
+
+    <div class="indicadores">
+      <span class="badge badge-verde">Hoje: <strong id="totalHoje">0</strong></span>
+      <span class="badge badge-azul">Total: <strong id="totalGeral">0</strong></span>
+      <button id="botaoTema" class="botao pequeno">🌙 Modo escuro</button>
+    </div>
+  </header>
+
+  <nav class="abas">
+    <button class="aba ativa">Ficha Visual de Monitoria</button>
+    <button class="aba">E-mail de Reorientação</button>
+  </nav>
+
+  <main class="grade">
+    <section class="coluna">
+      <article class="cartao">
+        <div class="titulo-linha">
+          <h2>1. Cole o Relatório Bruto</h2>
+          <button id="colarTexto" class="botao pequeno verde">Colar</button>
+        </div>
+
+        <textarea id="relatorioBruto" rows="9"
+          placeholder="Cole aqui o texto da monitoria contendo Realizada, Operador(a), AQM, Monitoria, Registro de Atendimento, Observação(ões), Ocorrência(s), etc."></textarea>
+
+        <div class="acoes">
+          <button id="processar" class="botao principal">⚡ Processar dados</button>
+          <button id="limpar" class="botao">🗑 Limpar</button>
+        </div>
+      </article>
+
+      <article class="cartao">
+        <h2>2. Dados do Registro</h2>
+
+        <div class="formulario">
+          <label>
+            Data realizada
+            <input id="dataRealizada" type="date">
+          </label>
+
+          <label>
+            Operador(a)
+            <input id="operador" type="text">
+          </label>
+
+          <label>
+            Data/hora atendimento
+            <input id="dataAtendimento" type="datetime-local">
+          </label>
+
+          <label>
+            Protocolo
+            <input id="protocolo" type="text">
+          </label>
+
+          <label>
+            Nota monitoria
+            <input id="notaMonitoria" type="text">
+          </label>
+
+          <label>
+            Nota AQM
+            <input id="notaAqm" type="text">
+          </label>
+
+          <label class="largura-total">
+            M.O.
+            <input id="mo" type="text">
+          </label>
+
+          <label class="largura-total">
+            Atendimento / solicitação
+            <textarea id="atendimento" rows="4"></textarea>
+          </label>
+
+          <label class="largura-total">
+            Observações
+            <textarea id="observacoes" rows="3">Não se aplica.</textarea>
+          </label>
+
+          <label class="largura-total">
+            Ocorrências
+            <textarea id="ocorrencias" rows="3">Não se aplica.</textarea>
+          </label>
+        </div>
+      </article>
+    </section>
+
+    <section class="coluna">
+      <article class="cartao">
+        <div class="acoes">
+          <button id="copiarFormatado" class="botao verde">📋 Copiar formatado</button>
+          <button id="copiarImagem" class="botao roxo">▣ Copiar como imagem</button>
+        </div>
+
+        <div id="ficha" class="ficha">
+          <h2>FEEDBACK MONITORIA</h2>
+          <p class="subtitulo">Data da monitoria</p>
+
+          <table>
+            <tr>
+              <th>Operador(a):</th>
+              <td id="saidaOperador">---</td>
+            </tr>
+            <tr>
+              <th>Nota monitoria:</th>
+              <td id="saidaNotaMonitoria">---</td>
+            </tr>
+            <tr>
+              <th>Nota AQM:</th>
+              <td id="saidaNotaAqm">---</td>
+            </tr>
+            <tr>
+              <th>Protocolo:</th>
+              <td id="saidaProtocolo">---</td>
+            </tr>
+            <tr>
+              <th>M.O.:</th>
+              <td id="saidaMo">---</td>
+            </tr>
+            <tr>
+              <th colspan="2">Atendimento</th>
+            </tr>
+            <tr>
+              <td colspan="2" id="saidaAtendimento">---</td>
+            </tr>
+            <tr>
+              <th colspan="2">Observações / pontos de atenção</th>
+            </tr>
+            <tr>
+              <td colspan="2" id="saidaObservacoes">Não se aplica.</td>
+            </tr>
+          </table>
+
+          <p class="mensagem">
+            QUALQUER DÚVIDA OU CONTESTAÇÃO, ACIONE SUA SUPERVISÃO.
+          </p>
+        </div>
+
+        <label class="justificativa">
+          Justificativa / ocorrência rápida
+          <textarea id="justificativa" rows="3" placeholder="---"></textarea>
+        </label>
+      </article>
+
+      <article class="cartao">
+        <div class="titulo-linha">
+          <h2>📜 Histórico salvo automaticamente</h2>
+          <button id="limparHistorico" class="botao pequeno perigo">Limpar tudo</button>
+        </div>
+
+        <select id="filtroData">
+          <option value="">Todas as datas</option>
+        </select>
+
+        <div id="historico" class="historico">
+          Nenhum registro salvo no histórico.
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
